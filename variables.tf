@@ -1,11 +1,10 @@
-variable "message" {
-  type = string
-}
-
 variable "port" {
-  type = number
+  description = "Port for the nginx container"
+  default     = 8081
+  type        = number
 }
 
-output "link" {
-  value = "http://localhost:${var.port}"
+variable "message" {
+  description = "Message to display on the webpage"
+  type        = string
 }
