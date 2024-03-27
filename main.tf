@@ -50,12 +50,4 @@ resource "docker_service" "service" {
   }
 }
 
-#resource "docker_container" "nginx" {
-#  image = docker_image.nginx.image_id
-#  name  = "tutorial"
 
-#  ports {
-#   internal = var.port_tar
-#   external = var.port
-# }
-#}
