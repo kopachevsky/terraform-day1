@@ -1,11 +1,11 @@
 variable "message" {
-  type = string
+  description = "Текстове повідомлення для відображення"
+  type        = string
+  default     = "Hello, World!"
 }
 
 variable "port" {
-  type = number
-}
-
-output "link" {
-  value = "http://localhost:${var.port}"
+  description = "Порт на локальній машині"
+  type        = number
+  default     = 8080
 }
