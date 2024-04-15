@@ -8,7 +8,7 @@ resource "docker_image" "nginx" {
 
 # Docker container resource
 resource "docker_container" "nginx" {
-  image = docker_image.nginx.latest
+  image = docker_image.nginx.name
   name  = "nginx-server"
   ports {
     internal = 80
@@ -16,9 +16,7 @@ resource "docker_container" "nginx" {
   }
   volumes {
     container_path = "/usr/share/nginx/html"
-    host_path      = "${path.module}/html"
-    read_only      = false
-    volume_type    = "bind"
+    host_path      = abspath("${path.module}/html")
   }
 }
 
